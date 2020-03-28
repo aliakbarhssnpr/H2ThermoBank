@@ -1,0 +1,15 @@
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.csprojAssemblyReference.cache
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\MainWindow.g.cs
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\App.g.cs
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank_MarkupCompile.cache
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank_MarkupCompile.lref
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\bin\Debug\H2ThermoBank.exe.config
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\bin\Debug\H2ThermoBank.exe
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\bin\Debug\H2ThermoBank.pdb
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\MainWindow.baml
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.g.resources
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.Properties.Resources.resources
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.csproj.GenerateResource.cache
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.csproj.CoreCompileInputs.cache
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.exe
+C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\obj\Debug\H2ThermoBank.pdb

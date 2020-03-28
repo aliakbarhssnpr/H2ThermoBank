@@ -1,0 +1,84 @@
+﻿<Window x:Class="H2ThermoBank.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H2ThermoBank"
+        mc:Ignorable="d"
+        Title="H2ThermoBank" Height="487.5" Width="816.5">
+
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="11*"/>
+        </Grid.ColumnDefinitions>
+        <WrapPanel Margin="0,12,319,381"  Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Width="150" Height="27" Content="Select Composition:"/>
+            <ComboBox x:Name="compUnit"  Width="100" >
+                <ComboBoxItem x:Name="H2CH4" Content="H2 + CH4" />
+                <ComboBoxItem x:Name="H2N2" Content="H2 + N2" />
+                <ComboBoxItem x:Name="H2CO2" Content="H2 + CO2" />
+                <ComboBoxItem x:Name="H2NG" Content="H2 + Natural Gas" />
+            </ComboBox>
+
+        </WrapPanel>
+        <WrapPanel Margin="0,43,319,350"  Grid.Row="0" Grid.ColumnSpan="2">
+            <Label Width="150"  Height="27" Content="H2 Mole Fraction:"/>
+            <ComboBox  x:Name="fracUnit" Width="100" >
+                <ComboBoxItem x:Name="H10" Content="10%" />
+                <ComboBoxItem x:Name="H30" Content="30%" />
+                <ComboBoxItem x:Name="H50" Content="50%" />
+                <ComboBoxItem x:Name="H70" Content="70%" />
+                <ComboBoxItem x:Name="H90" Content="90%" />
+            </ComboBox>
+        </WrapPanel>
+
+        <Label Content="Pressure (MPa)" HorizontalAlignment="Left" Margin="4,74,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="0.01" HorizontalAlignment="Left" Height="23" Margin="154,74,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" Name="P"/>
+        <Label Content="Temperature (K)" HorizontalAlignment="Left" Margin="0,114,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="200" HorizontalAlignment="Left" Height="23" Margin="154,114,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="50" Name="T"/>
+        <Label Content="Acceptable pressures: .01, 1, 2, 3, ..., 100" HorizontalAlignment="Left" Margin="230,74,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label Content="Acceptable temperatures: 200, 220, 240, 260, ..., 500" HorizontalAlignment="Left" Margin="230,114,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Button  x:Name="ExcelButton"  Margin="0,0,-402,383"   Grid.Column="1" HorizontalAlignment="Right" >
+
+            <Button.ToolTip>Export the composition's selected components to Excel.</Button.ToolTip>
+
+        </Button>
+        <Button  VerticalAlignment="Top" HorizontalAlignment="Left"  x:Name="getData"  Click="getDataClick"  Width="109" Height="27" Margin="13,168,0,0" Grid.Row="0" >
+            <Button.ToolTip>Gete the thermodynamic data for selected composition and P/T conditions.</Button.ToolTip>
+            <DockPanel>
+                <TextBlock  Height="18" VerticalAlignment="Center"><Run Text="Get Data"/></TextBlock>
+            </DockPanel>
+
+        </Button>
+        <Label Content="Gas Density (Kg/M3)" HorizontalAlignment="Left" Margin="13,218,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="167,218,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" Name="gDensity"/>
+        <Label Content="Gas viscosity(cp)" HorizontalAlignment="Left" Margin="259,218,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="72,218,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" Name="gViscosity" Grid.Column="1"/>
+        <Label Content="Gas thermal conductivity  (W/m.K)" HorizontalAlignment="Left" Margin="173.626,218,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="365,218,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" Name="gCondcutivity" Grid.Column="1"/>
+        <Label Content="Gas thermal capacity(J/kg.K)" HorizontalAlignment="Left" Margin="6,251,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="167,254,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" Name="gThermalCap"/>
+        <Label Content="Gas enthalpy(J/kg)" HorizontalAlignment="Left" Margin="259,254,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="72,254,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" Name="gEnthalpy" Grid.Column="1"/>
+        <Label Content="Gas entropy(J/kg.K) " HorizontalAlignment="Left" Margin="210.626,257,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="365,257,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" Name="gEnthropy" Grid.Column="1"/>
+        <Label Content="Gas Mass Fraction" HorizontalAlignment="Left" Margin="259,285,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="72,285,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" Name="gMFraction" Grid.Column="1"/>
+        <Label Content="Liquid Density (Kg/M3)" HorizontalAlignment="Left" Margin="13,319,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="167,319,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="87" x:Name="lDensity"/>
+        <Label Content="Liquid viscosity(cp)" HorizontalAlignment="Left" Margin="259,319,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="72,320,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" x:Name="lViscosity" Grid.Column="1"/>
+        <Label Content="Liquid thermal capacity(J/kg.K)" HorizontalAlignment="Left" Margin="-2,352,0,0" VerticalAlignment="Top"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="167,355,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="87" x:Name="lThermalCap"/>
+        <Label Content="Liquid enthalpy(J/kg)" HorizontalAlignment="Left" Margin="259,355,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="72,356,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="93" x:Name="lEnthalpy" Grid.Column="1"/>
+        <Label Content="Liquid thermal conductivity  (W/m.K)" HorizontalAlignment="Left" Margin="161.626,316,0,0" VerticalAlignment="Top"  Grid.Column="1"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="365,316,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" x:Name="lCondcutivity" Grid.Column="1"/>
+        <Label Content="Liquid entropy(J/kg.K) " HorizontalAlignment="Left" Margin="210.626,355,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+        <TextBox Text="0" HorizontalAlignment="Left" Height="23" Margin="365,355,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="92" x:Name="lEnthropy" Grid.Column="1"/>
+        <Image Grid.Column="1" HorizontalAlignment="Left" Height="183" Margin="271,0,0,0" VerticalAlignment="Top" Width="186" Source="C:\Users\ahassanp\source\repos\H2ThermoBank\H2ThermoBank\l790LkHX_400x400.jpg" IsEnabled="False"/>
+
+    </Grid>
+</Window>
